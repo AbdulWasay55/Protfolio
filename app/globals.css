@@ -2,26 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-item {
+  opacity: 0;
+  animation: slideFromRight 1.5s ease forwards;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.delay-1 {
+  animation-delay: 0.4s;
+}
+
+.delay-2 {
+  animation-delay: 0.6s;
+}
+
+.delay-3 {
+  animation-delay: 0.8s;
+}
+
+.delay-4 {
+  animation-delay: 0.9s;
+}
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    transform: rotateY(0deg);
   }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    transform: rotateY(360deg);
+  }
+}
+
+.animation-left{
+  opacity: 0;
+  animation: slideFromLeft 1.5s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* Animation for move item bottom to top  */
+@keyframes slideFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animation-bottom{
+  opacity: 0;
+  animation: slideFromBottom 1.5s ease forwards;
+}
+.b-delay-1{
+  animation-delay: 0.8s;
+}
+
+.b-delay-2{
+  animation-delay: 1s;
 }
